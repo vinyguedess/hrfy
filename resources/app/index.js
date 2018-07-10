@@ -1,8 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { Provider } from "react-redux";
+import store from "./config";
+import Home from "./components/Home";
 
 
 ReactDOM.render(
-    <h1>Welcome to HRfy</h1>,
+    <Provider store={store}>
+        <Home />
+    </Provider>,
     document.getElementById("app")
 );
