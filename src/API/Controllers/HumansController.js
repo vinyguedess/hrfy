@@ -9,11 +9,12 @@ export default class HumansController
     indexAction(request, response) 
     {
         let humansDao = new DAO("humans");
-
+        
+        const search = JSON.parse(request.query.search || "{}");
         return Promise.all([
-            humansDao.count(JSON.parse(request.query.search)),
+            humansDao.count(search),
             humansDao.find(
-                JSON.parse(request.query.search),
+                search,
                 request.query.limit,
                 request.query.offset
             )
