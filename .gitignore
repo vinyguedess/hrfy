@@ -3,6 +3,7 @@
 /app
 /coverage
 /node_modules
+/public/assets
 /yarn-error.log
 
 # OS and IDE files and folders
