@@ -1,0 +1,12 @@
+/.babelrc
+/.eslintrc
+/.gitignore
+/.lintstagedrc
+/package.json
+/public
+/README.md
+/resources/views
+/server.js
+/storage
+/test/mocha.opts
+/yarn.lock
