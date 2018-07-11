@@ -1,14 +1,20 @@
 import React from "react";
+import { Grid } from "@material-ui/core";
 import SearchBar from "./SearchBar";
 import HumansList from "./HumansList";
 import PropTypes from "prop-types";
 
 
 const Home = ({ data, fetchHumans, setSearchTerm }) => (
-    <div>
-        <SearchBar setSearchTerm={setSearchTerm} />
-        <HumansList fetchHumans={fetchHumans} data={data} />
-    </div>
+    <Grid container>
+        <Grid item xs={12}>
+            <SearchBar setSearchTerm={setSearchTerm} />
+        </Grid>
+
+        <Grid item xs={12}>
+            <HumansList fetchHumans={fetchHumans} data={data} />
+        </Grid>
+    </Grid>
 );
 
 

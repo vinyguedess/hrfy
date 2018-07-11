@@ -3,11 +3,11 @@ import * as pug from "pug";
 import { get } from "../../Core/Routes";
 
 
-export default class AppController
+export default class AppController 
 {
 
-    @get("/")
-    indexAction(request, response)
+    @get("/*")
+    indexAction(request, response) 
     {
         response.send(pug.renderFile(path.resolve("resources/views", "app.pug")));
     }
