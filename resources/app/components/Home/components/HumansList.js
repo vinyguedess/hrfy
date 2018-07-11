@@ -16,6 +16,7 @@ const HumansList = ({ fetchHumans, data }) =>
                         <th>Name</th>
                         <th>E-mail</th>
                         <th>Phone</th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -26,6 +27,11 @@ const HumansList = ({ fetchHumans, data }) =>
                                 <td>{human.name}</td>
                                 <td>{human.email}</td>
                                 <td>{human.phone}</td>
+                                <td>
+                                    <a href={`/view/${human._id}`}>
+                                        View
+                                    </a>
+                                </td>
                             </tr>
                         ))
                     }

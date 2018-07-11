@@ -13,10 +13,10 @@ const shouldFetchHumans = ({ home }) =>
 };
 
 
-export const fetchHumans = (limit, offset) => (dispatch, getState) => 
+export const fetchHumans = (limit, offset, paginate = false) => (dispatch, getState) => 
 {
     const state = getState();
-    if (shouldFetchHumans(state)) 
+    if (shouldFetchHumans(state) || paginate) 
     {
         dispatch(requestHumans());
         return Axios.get("/api/humans", {

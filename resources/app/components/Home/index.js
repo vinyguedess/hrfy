@@ -15,9 +15,9 @@ const mapDispatchToProps = dispatch => ({
     {
         dispatch(setSearchTerm(term));
     },
-    fetchHumans(limit = 10, offset = 0, search = {}) 
+    fetchHumans(limit = 10, offset = 0, paginate=false) 
     {
-        dispatch(fetchHumans(limit, offset, search));
+        dispatch(fetchHumans(limit, offset, paginate));
     }
 });
 

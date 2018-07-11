@@ -5,13 +5,13 @@ import PropTypes from "prop-types";
 const HumansListPager = ({ total, limit, fetchHumans }) => 
 {
 
-    const totalButtons = total / limit;
+    const totalButtons = Math.ceil(total / limit);
 
     return (
         <div>
             {
                 Array.apply(null, Array(totalButtons)).map((p, key) => (
-                    <button key={`table-human-page-${key}`} onClick={fetchHumans(limit, (key - 1) * total)}>
+                    <button key={`table-human-page-${key}`} onClick={() => fetchHumans(limit, key * limit, true)}>
                         {key + 1}
                     </button>
                 ))

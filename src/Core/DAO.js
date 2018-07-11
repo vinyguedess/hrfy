@@ -38,6 +38,18 @@ export default class DAO
         return results;
     }
 
+    findById(id)
+    {
+        const results = this.loadCollection().data;
+        for (let i = 0; i < results.length; i++)
+        {
+            if (results[i]._id === id)
+                return results[i];
+        }
+
+        return null;
+    }
+
     count(search = {}) 
     {
         let results = this.loadCollection().data;
