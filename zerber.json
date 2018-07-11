@@ -1,0 +1,6 @@
+{
+    "test": {
+        "title": "Testing",
+        "command": "test"
+    }
+}

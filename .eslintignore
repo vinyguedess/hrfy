@@ -10,3 +10,4 @@
 /storage
 /test/mocha.opts
 /yarn.lock
+/zerber.json
