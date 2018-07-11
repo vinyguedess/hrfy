@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 const HumansListPager = ({ total, limit, fetchHumans }) => 
 {
 
-    const totalButtons = total / limit;
+    const totalButtons = Math.ceil(total / limit);
 
     return (
         <div>
