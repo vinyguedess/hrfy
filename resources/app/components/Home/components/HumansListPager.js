@@ -11,7 +11,7 @@ const HumansListPager = ({ total, limit, fetchHumans }) =>
         <div>
             {
                 Array.apply(null, Array(totalButtons)).map((p, key) => (
-                    <button key={`table-human-page-${key}`} onClick={fetchHumans(limit, (key - 1) * total)}>
+                    <button key={`table-human-page-${key}`} onClick={() => fetchHumans(limit, key * limit, true)}>
                         {key + 1}
                     </button>
                 ))
