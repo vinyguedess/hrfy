@@ -21,8 +21,22 @@ export default class HumansController
         ])
             .then(([total, results]) =>
                 response.header("X-Total-Count", total)
-                    .json(results)
-                    .status(200));
+                    .json(results));
+    }
+
+    @get("/api/humans/:id")
+    viewAction(request, response)
+    {
+        let humansDao = new DAO("humans");
+
+        const human = humansDao.findById(request.params.id);
+        if (!human)
+            return response.status(404).json({
+                message: "Human not found",
+                errors: { human: [ "not found" ] }
+            });
+
+        return response.json(human);
     }
 
 }
